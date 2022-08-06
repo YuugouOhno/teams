@@ -13,12 +13,13 @@ class PortfolioController extends Controller
         $query = Portfolio::with('tag')->latest();
         $tag_id = $request->tags;
 
+
 //        if($tags_id) {
 //            $query->where('tag_id', $tag_id);
 //        }
 
         $tags = $tag->get();
-        $items = $portfolio->get();
+        $items = $portfolio->latest()->paginate(10);
         return view('index', compact('items', 'tags'));
     }
 
