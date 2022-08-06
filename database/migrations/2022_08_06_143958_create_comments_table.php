@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->string('body', 300);
+            $table->integer('role');
             $table->integer('portfolio_id')->unsigned();
             $table->timestamps();
         });
