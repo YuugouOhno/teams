@@ -14,16 +14,17 @@ class PortfolioController extends Controller
 {
     public function index(Portfolio $portfolio, Tag $tag, Request $request)
     {
-        $query = Portfolio::with('tag')->latest();
-        $tag_id = $request->tags;
+        $tag_names = $request->input('tags');
 
-
-//        if($tags_id) {
-//            $query->where('tag_id', $tag_id);
-//        }
-
+        if($tag_names) {
+            foreach($tag_names as $tag_name){
+                $portfolio = Portfolio::whereHas('tags', function($query) use ($tag_name) {
+                    $query->where('name', $tag_name);
+                });
+            }
+        }
         $tags = $tag->get();
-        $items = $portfolio->latest()->paginate(10);
+        $items = $portfolio->paginate(10);
         return view('index', compact('items', 'tags'));
     }
 
@@ -59,5 +60,11 @@ class PortfolioController extends Controller
         $input['role'] = Auth::user()->role;
         $comment = $comment->create($input);
         return redirect('/portfolio/' . $comment->portfolio_id);
+    }
+
+    public function search_form(Tag $tag)
+    {
+        $tags = $tag->get();
+        return view('search_form',compact('tags'));
     }
 }

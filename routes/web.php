@@ -38,5 +38,6 @@ Route::controller(PortfolioController::class)->group(function() {
    Route::post('/store', 'store');
    Route::post('/store_comment', 'store_comment');
    Route::get('/portfolio/{portfolio}', 'show');
+   Route::get('search_form', 'search_form')->name('search_form');
 });
 
