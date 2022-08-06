@@ -9,6 +9,21 @@
 <body>
     <h1>ポートフォリオ一覧ページ</h1>
     <div>
+        <form action="/" method="GET">
+            @csrf
+            <div>
+                <select name="tags[]" class="custom-select" multiple>
+                    @foreach ($tags as $tag)
+                        <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div>
+                <input type="submit">
+            </div>
+        </form>
+    </div>
+    <div>
         @foreach($items as $item)
             <h2>{{$item->title}}</h2>
         @endforeach

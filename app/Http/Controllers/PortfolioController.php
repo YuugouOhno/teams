@@ -3,14 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Models\Portfolio;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
 {
-    public function index(Portfolio $portfolio)
+    public function index(Portfolio $portfolio, Tag $tag, Request $request)
     {
+        $query = Portfolio::with('tag')->latest();
+        dd($request->tags);
+        $tag_id = $request->tags;
+
+        if($tags_id) {
+            $query->where('tag_id', $tag_id);
+        }
+
+        $tags = $tag->get();
         $items = $portfolio->get();
-        return view('index', compact('items'));
+        return view('index', compact('items', 'tags'));
     }
 
     public function show(Portfolio $portfolio)
@@ -25,7 +35,7 @@ class PortfolioController extends Controller
 
     public function store(Portfolio $portfolio)
     {
-        $input
+
         return redirect('/portfolio/' . $portfolio->id);
     }
 }
