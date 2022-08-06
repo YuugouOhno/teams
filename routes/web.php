@@ -15,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PortfolioController::class, 'index']);
 
+Route::controller(PortfolioController::class)->group(function() {
+   Route::get('/', 'index');
+   Route::get('create', 'create');
+   Route::post('/store', 'store');
+});
 // Route::get('/test', function () {
 //     return view('welcome');
 // });

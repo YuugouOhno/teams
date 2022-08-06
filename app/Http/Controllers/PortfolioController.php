@@ -12,4 +12,20 @@ class PortfolioController extends Controller
         $items = $portfolio->get();
         return view('index', compact('items'));
     }
+
+    public function show(Portfolio $portfolio)
+    {
+        return view('show', compact('portfolio'));
+    }
+
+    public function create(Portfolio $portfolio)
+    {
+        return view('create');
+    }
+
+    public function store(Portfolio $portfolio)
+    {
+        $input
+        return redirect('/portfolio/' . $portfolio->id);
+    }
 }
