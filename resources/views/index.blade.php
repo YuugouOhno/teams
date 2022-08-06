@@ -1,10 +1,10 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            ポートフォリオ一覧ページ
-        </h2>
-    </x-slot>
+<x-slot name="header">
+</x-slot>
 <body>
+    <input type="checkbox" class="check fade" id="checked-fade">
+    <label class="switch fade" for="checked-fade"></label>
+    <div class="gatefold">
     @foreach($items as $item)
         <div class="border-solid border-2 border-sky-900 mb-4">
             <h2>タイトル：<a href="/portfolio/{{ $item->id }}" class="text-blue-600 hover:text-blue-800">{{ $item->title }}</a></h2>
@@ -17,5 +17,12 @@
             </h2>
         </div>
     @endforeach
+    </div>
 </body>
+<script>
+    window.onload = function(){
+        let element = document.getElementById('checked-fade');
+        element.checked = true;
+    }
+</script>
 </x-app-layout>
