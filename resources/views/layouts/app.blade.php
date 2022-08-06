@@ -23,4 +23,7 @@
             </main>
         </div>
     </body>
+    <footer class="bg-black">
+        <p class="p-2 text-center text-xs text-white font-serif">© 2022 </span>レバテックカレッジ</p>
+    </footer>
 </html>

@@ -1,17 +1,15 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="bg-black font-serif">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
+                <div class="shrink-0 flex items-center text-white">
                     <a href="{{ route('dashboard') }}">
                         Levtech Gallery
                     </a>
                 </div>
-
                 <!-- Navigation Links -->
-
             </div>
 
             <!-- Settings Dropdown -->
@@ -34,14 +32,18 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
+                            <x-dropdown-link :href="route('search_form')">
+                                Search
+                            </x-dropdown-link>
+                            <x-dropdown-link :href="route('create')">
+                                Create
+                            </x-dropdown-link>
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
-                            <x-dropdown-link :href="route('search_form')">
-                                Search
-                            </x-dropdown-link>
+
                         </form>
                     </x-slot>
                 </x-dropdown>
