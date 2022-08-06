@@ -9,7 +9,7 @@ class PortfolioController extends Controller
 {
     public function index(Portfolio $portfolio)
     {
-        $items = $portfolio->get();
+        $items = $portfolio->latest()->paginate(10);
         return view('index', compact('items'));
     }
 
