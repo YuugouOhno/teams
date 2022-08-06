@@ -1,6 +1,4 @@
 <x-app-layout>
-<x-slot name="header">
-</x-slot>
 <body>
     <input type="checkbox" class="check fade" id="checked-fade">
     <label class="switch fade" for="checked-fade"></label>

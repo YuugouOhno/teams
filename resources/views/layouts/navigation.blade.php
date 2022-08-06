@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
+                        Levtech Gallery
                     </a>
                 </div>
 
@@ -40,7 +40,7 @@
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
                             <x-dropdown-link :href="route('search_form')">
-                                検索
+                                Search
                             </x-dropdown-link>
                         </form>
                     </x-slot>
