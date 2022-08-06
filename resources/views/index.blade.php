@@ -21,12 +21,12 @@
             </div>
         </form>
     </div>
-    <div class="border-solid border-2 border-sky-500">
         @foreach($items as $item)
-            <h2>タイトル：<a href="/portfolio/{{ $item->id }}">{{ $item->title }}</a></h2>
-            <h2>デプロイURL{{ $item->deploy_url }}</h2>
-            <h2>概要：{{ $item->overview }}</h2>
+            <div class="border-solid border-2 border-sky-500 mb-4">
+                <h2>タイトル：<a href="/portfolio/{{ $item->id }}">{{ $item->title }}</a></h2>
+                <h2>デプロイURL{{ $item->deploy_url }}</h2>
+                <h2>概要：{{ $item->overview }}</h2>
+            </div>
         @endforeach
-    </div>
 </body>
 </x-app-layout>
