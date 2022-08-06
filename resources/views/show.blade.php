@@ -1,59 +1,74 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            ポートフォリオしょーさいページ
+        </h2>
+    </x-slot>
 <body>
-    <h1>ポートフォリオ詳細ページ</h1>
-    <div>
-        <div>
-            <h2>タイトル</h2>
-            <p>{{$portfolio->title}}</p>
-        </div>
-        <div>
-            <h2>デプロイURL</h2>
-            <p>{{$portfolio->deploy_url}}</p>
-        </div>
-        <div>
-            <h2>概要</h2>
-            <p>{{$portfolio->overview}}</p>
-        </div>
-        <div>
-            <h2>制作背景</h2>
-            <p>{{$portfolio->background}}</p>
-        </div>
-        <div>
-            <h2>機能</h2>
-            <p>{{$portfolio->function}}</p>
-        </div>
-        <div>
-            <h2>経験</h2>
-            <p>{{$portfolio->experience}}</p>
-        </div>
-        <div>
-            <h2>卒業スライド</h2>
-            <p>{{$portfolio->slide}}</p>
-        </div>
-        <div>
-            <h2>使い方</h2>
-            <p>{{$portfolio->usage}}</p>
-        </div>
-        <div>
-            <h2>Github</h2>
-            <p>{{$portfolio->github_url}}</p>
-        </div>
-        <div>
-            <h2>タグ</h2>
-            @foreach($portfolio->tags as $tag)
-                <p>{{ $tag->name }}</p>
-            @endforeach
-        </div>
-        <div>
-            <iframe width="560" height="315" src={{'https://www.youtube.com/embed/' . $portfolio->movie_url}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="bg-white py-6 sm:py-8 lg:py-12">
+        <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
+            <!-- text - start -->
+            <div class="mb-10 md:mb-16">
+                <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">{{$portfolio->title}}</h2>
+
+                <p class="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">{{$portfolio->overview}}</p>
+                <p class="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">
+                    @foreach($portfolio->tags as $tag)
+                        <a href="/?tags%5B%5D={{ $tag->name }}" class="text-blue-600 hover:text-blue-800">#{{ $tag->name }}</a>
+                    @endforeach
+                </p>
+
+            </div>
+            <!-- text - end -->
+
+            <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8">
+                <!-- feature - start -->
+                <div class="flex flex-col border rounded-lg p-4 md:p-6">
+                    <h3 class="text-lg md:text-xl font-semibold mb-2">デプロイURL</h3>
+                    <p class="text-gray-500 mb-4">{{$portfolio->deploy_url}}</p>
+                </div>
+                <!-- feature - end -->
+
+                <!-- feature - start -->
+                <div class="flex flex-col border rounded-lg p-4 md:p-6">
+                    <h3 class="text-lg md:text-xl font-semibold mb-2">制作背景</h3>
+                    <p class="text-gray-500 mb-4">{{$portfolio->background}}</p>
+                </div>
+                <!-- feature - end -->
+
+                <!-- feature - start -->
+                <div class="flex flex-col border rounded-lg p-4 md:p-6">
+                    <h3 class="text-lg md:text-xl font-semibold mb-2">機能説明</h3>
+                    <p class="text-gray-500 mb-4">{{$portfolio->function}}</p>
+                </div>
+                <!-- feature - end -->
+
+                <!-- feature - start -->
+                <div class="flex flex-col border rounded-lg p-4 md:p-6">
+                    <h3 class="text-lg md:text-xl font-semibold mb-2">プログラミング経験</h3>
+                    <p class="text-gray-500 mb-4">{{$portfolio->experience}}</p>
+                </div>
+                <!-- feature - end -->
+
+                <!-- feature - start -->
+                <div class="flex flex-col border rounded-lg p-4 md:p-6">
+                    <h3 class="text-lg md:text-xl font-semibold mb-2">使い方</h3>
+                    <p class="text-gray-500 mb-4">{{$portfolio->usage}}</p>
+                </div>
+                <!-- feature - end -->
+
+                <!-- feature - start -->
+                <div class="flex flex-col border rounded-lg p-4 md:p-6">
+                    <h3 class="text-lg md:text-xl font-semibold mb-2">Github</h3>
+                    <p class="text-gray-500 mb-4">{{$portfolio->github_url}}</p>
+                </div>
+                <!-- feature - end -->
+                <div class="flex flex-col border rounded-lg p-4 md:p-6">
+                    <h3 class="text-lg md:text-xl font-semibold mb-2">youtube</h3>
+                    <iframe src={{'https://www.youtube.com/embed/' . $portfolio->movie_url}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
         </div>
     </div>
 </body>
-</html>
+</x-app-layout>
