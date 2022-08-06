@@ -24,6 +24,6 @@
         </div>
     </body>
     <footer class="bg-black">
-        <p class="p-2 text-center text-xs text-white font-serif">© 2022 </span>レバテックカレッジ</p>
+        <p class="p-2 text-center text-xs text-white font-serif">© 2022 &nbsp;Levtech College</p>
     </footer>
 </html>
