@@ -27,15 +27,19 @@ class PortfolioController extends Controller
         return view('show', compact('portfolio'));
     }
 
-    public function create(Portfolio $portfolio)
+    public function create(Portfolio $portfolio, Tag $tag)
     {
-        return view('create');
+        $tags = $tag->get();
+        return view('create', compact('tags'));
     }
 
     public function store(Portfolio $portfolio, Request $request)
     {
+        $tags = $request->input('tags');
         $input = $request->all();
         $portfolio = $portfolio->create($input);
+
+        $portfolio->tags()->attach($tags);
         return redirect('/portfolio/' . $portfolio->id);
     }
 }

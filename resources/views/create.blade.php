@@ -50,6 +50,13 @@
                 <h2>githubのurl（null可）</h2>
                 <input name="github_url" placeholder="https:example.com"/>
             </div>
+            <div>
+                <select name="tags[]" class="custom-select" multiple>
+                    @foreach ($tags as $tag)
+                        <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                    @endforeach
+                </select>
+            </div>
             <input type="submit" value="保存"/>
         </form>
     </body>
