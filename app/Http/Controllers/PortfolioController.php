@@ -19,7 +19,11 @@ class PortfolioController extends Controller
         }
 
         $tags = $tag->get();
+<<<<<<< HEAD
         $items = $portfolio->latest()->paginate(10);
+=======
+        $items = $portfolio->get();
+>>>>>>> 359f0e1dbbd380e571f5d06f337a75eb02540ca1
         return view('index', compact('items', 'tags'));
     }
 
