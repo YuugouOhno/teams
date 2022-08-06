@@ -21,7 +21,6 @@
             </div>
         </form>
     </div>
-    <div>
     <div class="border-solid border-2 border-sky-500">
         @foreach($items as $item)
             <h2>タイトル：<a href="/portfolio/{{ $item->id }}">{{ $item->title }}</a></h2>
