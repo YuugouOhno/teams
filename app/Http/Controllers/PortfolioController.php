@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Draft;
 use App\Models\Portfolio;
 use App\Models\Tag;
 use Illuminate\Http\Request;
@@ -24,20 +25,17 @@ class PortfolioController extends Controller
         return view('show', compact('portfolio'));
     }
 
-    public function create(Portfolio $portfolio, Tag $tag)
+    public function create()
     {
-        $tags = $tag->get();
-        return view('create', compact('tags'));
+        return view('create');
     }
 
-    public function store(Portfolio $portfolio, Request $request)
+    public function store(Draft $draft, Request $request)
     {
-        $tags = $request->input('tags');
         $input = $request->all();
-        $portfolio = $portfolio->create($input);
+        $draft = $draft->create($input);
 
-        $portfolio->tags()->attach($tags);
-        return redirect('/portfolio/' . $portfolio->id);
+        return redirect('/');
     }
 
     public function create_comment($portfolio)
