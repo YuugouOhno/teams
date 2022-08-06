@@ -20,4 +20,8 @@ class Portfolio extends Model
         'movie_url',
         'github_url',
     ];
+
+    public function tags(){
+        return $this->belongsToMany('App\Models\Tag');
+    }
 }

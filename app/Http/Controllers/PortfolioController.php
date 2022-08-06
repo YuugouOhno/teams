@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\Portfolio;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class PortfolioController extends Controller
 {
@@ -30,15 +34,32 @@ class PortfolioController extends Controller
         return view('show', compact('portfolio'));
     }
 
-    public function create(Portfolio $portfolio)
+    public function create(Portfolio $portfolio, Tag $tag)
     {
-        return view('create');
+        $tags = $tag->get();
+        return view('create', compact('tags'));
     }
 
     public function store(Portfolio $portfolio, Request $request)
     {
+        $tags = $request->input('tags');
         $input = $request->all();
         $portfolio = $portfolio->create($input);
+
+        $portfolio->tags()->attach($tags);
         return redirect('/portfolio/' . $portfolio->id);
+    }
+
+    public function create_comment($portfolio)
+    {
+        return view('create_comment', compact('portfolio'));
+    }
+
+    public function store_comment(Comment $comment, Request $request)
+    {
+        $input = $request->all();
+        $input['role'] = Auth::user()->role;
+        $comment = $comment->create($input);
+        return redirect('/portfolio/' . $comment->portfolio_id);
     }
 }
