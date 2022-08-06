@@ -22,7 +22,7 @@ use App\Http\Controllers\AdminController;
 // });
 
 Route::middleware(['auth', 'can:isAdmin'])->group(function(){
-   Route::get("/admin", [AdminController::class, 'index']); 
+   Route::get("/admin", [AdminController::class, 'index']);
 });
 
 Route::get('/dashboard', function () {
@@ -33,9 +33,9 @@ require __DIR__.'/auth.php';
 
 Route::controller(PortfolioController::class)->group(function() {
    Route::get('/', 'index');
-   Route::get('create', 'create');
+   Route::get('/create', 'create');
    Route::post('/store', 'store');
-   Route::get('/show', 'show');
+   Route::get('/portfolio/{portfolio}', 'show');
 });
 // Route::get('/test', function () {
 //     return view('welcome');
