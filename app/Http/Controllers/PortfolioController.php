@@ -43,6 +43,9 @@ class PortfolioController extends Controller
     public function store(Draft $draft, Request $request)
     {
         $input = $request->all();
+        if (preg_match('/v=(.+)/', $input['movie_url'], $movie_id)) {
+            $input['movie_url'] = $movie_id[1];
+        }
         $draft = $draft->create($input);
 
         return redirect('/');
