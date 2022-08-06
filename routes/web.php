@@ -20,6 +20,7 @@ Route::controller(PortfolioController::class)->group(function() {
    Route::get('/', 'index');
    Route::get('create', 'create');
    Route::post('/store', 'store');
+   Route::get('/show', 'show');
 });
 // Route::get('/test', function () {
 //     return view('welcome');
