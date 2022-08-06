@@ -35,7 +35,7 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::controller(PortfolioController::class)->group(function() {
-   Route::get('/', 'index');
+   Route::get('/portfolio', 'index');
    Route::get('/create', 'create');
    Route::get('/create_comment/{portfolio}', 'create_comment');
    Route::post('/store', 'store');
