@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ExampleController;
+use App\Http\Controllers\PortfolioController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ExampleController::class, 'index']);
+Route::get('/', [PortfolioController::class, 'index']);
 
 // Route::get('/test', function () {
 //     return view('welcome');
