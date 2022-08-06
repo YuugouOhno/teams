@@ -18,13 +18,13 @@ return new class extends Migration
             $table->string('title', 50);
             $table->string('deploy_url', 100);
             $table->string('overview', 300);
-            $table->string('background', 300);
-            $table->text('function');
-            $table->text('experience');
-            $table->string('slide', 100);
-            $table->text('usage');
-            $table->string('movie_url', 100);
-            $table->string('github_url', 100);
+            $table->string('background', 300)->nullable();
+            $table->text('function')->nullable();
+            $table->text('experience')->nullable();
+            $table->string('slide', 100)->nullable();
+            $table->text('usage')->nullable();
+            $table->string('movie_url', 100)->nullable();
+            $table->string('github_url', 100)->nullable();
             $table->timestamps();
         });
     }
