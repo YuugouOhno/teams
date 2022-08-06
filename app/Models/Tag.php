@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Tag extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name'
+    ];
 
     public function portfolios(){
         return $this->belongsToMany('App\Models\Portfolio');
