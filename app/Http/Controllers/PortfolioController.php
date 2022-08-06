@@ -14,14 +14,6 @@ class PortfolioController extends Controller
 {
     public function index(Portfolio $portfolio, Tag $tag, Request $request)
     {
-        $query = Portfolio::with('tag')->latest();
-        $tag_id = $request->tags;
-
-
-//        if($tags_id) {
-//            $query->where('tag_id', $tag_id);
-//        }
-
         $tags = $tag->get();
         $items = $portfolio->latest()->paginate(10);
         return view('index', compact('items', 'tags'));
