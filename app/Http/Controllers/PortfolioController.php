@@ -4,12 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Portfolio;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use App\Models\User;
+
+
 
 class PortfolioController extends Controller
 {
     public function index(Portfolio $portfolio)
     {
-        $items = $portfolio->latest()->paginate(10);
+        $items = $portfolio->get();
         return view('index', compact('items'));
     }
 
@@ -23,10 +27,8 @@ class PortfolioController extends Controller
         return view('create');
     }
 
-    public function store(Portfolio $portfolio, Request $request)
+    public function store(Portfolio $portfolio)
     {
-        $input = $request->all();
-        $portfolio = $portfolio->create($input);
         return redirect('/portfolio/' . $portfolio->id);
     }
 }

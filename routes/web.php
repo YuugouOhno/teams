@@ -37,6 +37,4 @@ Route::controller(PortfolioController::class)->group(function() {
    Route::post('/store', 'store');
    Route::get('/portfolio/{portfolio}', 'show');
 });
-// Route::get('/test', function () {
-//     return view('welcome');
-// });
+

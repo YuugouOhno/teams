@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Carbon\Carbon;
 use App\Models\User;
 
 class DeleteUser extends Command
@@ -22,7 +23,7 @@ class DeleteUser extends Command
     protected $description = 'ユーザー削除用のコマンド';
 
 
-    public $message = "これはテストです。";
+    public $month = 5;
     /**
      * Execute the console command.
      *
@@ -30,7 +31,12 @@ class DeleteUser extends Command
      */
     public function handle()
     {
+        $dt = new Carbon();
+        $remaining_period = $dt->subMonth($this->month);
 
-        $this->info(User::all()->name);
+        $deleted_users = User::where("created_at", "<" , $remaining_period)->where("role", "!=", 1);
+        $this->info("==========================deleted user==========================");
+        $this->info($deleted_users->get("name"));
+        $deleted_users->delete();
     }
 }
