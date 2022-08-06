@@ -16,8 +16,8 @@ class ExampleSeeder extends Seeder
      */
     public function run()
     {
-        
-        Example::factory()->count(3)->create();
-        
+        DB::table('tests')->insert([
+            'id' => 1,
+        ]);
     }
 }
