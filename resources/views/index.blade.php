@@ -7,6 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    <p>hello world</p>
+    <h1>ポートフォリオ一覧ページ</h1>
+    <div>
+        @foreach($items as $item)
+            <h2>{{$item->title}}</h2>
+        @endforeach
+    </div>
 </body>
 </html>
