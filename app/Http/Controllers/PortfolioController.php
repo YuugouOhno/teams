@@ -6,12 +6,23 @@ use App\Models\Comment;
 use App\Models\Portfolio;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
+use Carbon\Carbon;
+use App\Models\User;
+
+
+=======
 use Illuminate\Support\Facades\Auth;
+>>>>>>> 13db57885e7ca2f2e4c7672e185d951baa88eeb0
 
 class PortfolioController extends Controller
 {
     public function index(Portfolio $portfolio, Tag $tag, Request $request)
     {
+<<<<<<< HEAD
+        $items = $portfolio->get();
+        return view('index', compact('items'));
+=======
         $query = Portfolio::with('tag')->latest();
         $tag_id = $request->tags;
 
@@ -23,6 +34,7 @@ class PortfolioController extends Controller
         $tags = $tag->get();
         $items = $portfolio->latest()->paginate(10);
         return view('index', compact('items', 'tags'));
+>>>>>>> 13db57885e7ca2f2e4c7672e185d951baa88eeb0
     }
 
     public function show(Portfolio $portfolio)
@@ -36,13 +48,16 @@ class PortfolioController extends Controller
         return view('create', compact('tags'));
     }
 
-    public function store(Portfolio $portfolio, Request $request)
+    public function store(Portfolio $portfolio)
     {
+<<<<<<< HEAD
+=======
         $tags = $request->input('tags');
         $input = $request->all();
         $portfolio = $portfolio->create($input);
 
         $portfolio->tags()->attach($tags);
+>>>>>>> 13db57885e7ca2f2e4c7672e185d951baa88eeb0
         return redirect('/portfolio/' . $portfolio->id);
     }
     
