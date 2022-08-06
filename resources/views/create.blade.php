@@ -11,6 +11,14 @@
         <form action ="/store" method="POST">
             @csrf
             <div>
+                <h2>開発者</h2>
+                <input type="title" name="developer" placeholder="開発者名"/>
+            </div>
+            <div>
+                <h2>担当メンター</h2>
+                <input type="title" name="mentor" placeholder="担当メンター"/>
+            </div>
+            <div>
                 <h2>タイトル</h2>
                 <input type="title" name="title" placeholder="タイトル"/>
             </div>
@@ -49,13 +57,6 @@
             <div>
                 <h2>githubのurl（null可）</h2>
                 <input name="github_url" placeholder="https:example.com"/>
-            </div>
-            <div>
-                <select name="tags[]" class="custom-select" multiple>
-                    @foreach ($tags as $tag)
-                        <option value="{{ $tag->id }}">{{ $tag->name }}</option>
-                    @endforeach
-                </select>
             </div>
             <input type="submit" value="保存"/>
         </form>
