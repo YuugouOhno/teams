@@ -211,5 +211,10 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
+    
+    // 管理者アカウント情報
+    'admin_name' => env('ADMIN_USER_NAME'),
+    'admin_email' => env('ADMIN_USER_EMAIL'),
+    'admin_password' => env('ADMIN_USER_PASSWORD'),
 
 ];

@@ -8,7 +8,7 @@
     </head>
     <body>
         <h1>ポートフォリオ投稿ページ</h1>
-        <form action ="/posts" method="POST">
+        <form action ="/store" method="POST">
             @csrf
             <div>
                 <h2>タイトル</h2>
