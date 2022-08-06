@@ -4,6 +4,8 @@ use App\Http\Controllers\ExampleController;
 use App\Http\Controllers\PortfolioController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\AdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +20,10 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+Route::middleware(['auth', 'can:isAdmin'])->group(function(){
+   Route::get("/admin", [AdminController::class, 'index']); 
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
