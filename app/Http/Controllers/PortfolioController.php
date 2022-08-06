@@ -23,9 +23,10 @@ class PortfolioController extends Controller
         return view('create');
     }
 
-    public function store(Portfolio $portfolio)
+    public function store(Portfolio $portfolio, Request $request)
     {
-        $input
+        $input = $request->all();
+        $portfolio = $portfolio->create($input);
         return redirect('/portfolio/' . $portfolio->id);
     }
 }

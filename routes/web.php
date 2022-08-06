@@ -27,7 +27,7 @@ require __DIR__.'/auth.php';
 
 Route::controller(PortfolioController::class)->group(function() {
    Route::get('/', 'index');
-   Route::get('create', 'create');
+   Route::get('/create', 'create');
    Route::post('/store', 'store');
 });
 // Route::get('/test', function () {
