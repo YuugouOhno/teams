@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ExampleController;
+use App\Http\Controllers\PortfolioController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AdminController;
@@ -15,9 +17,9 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::middleware(['auth', 'can:isAdmin'])->group(function(){
    Route::get("/admin", [AdminController::class, 'index']); 
@@ -28,3 +30,12 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+Route::controller(PortfolioController::class)->group(function() {
+   Route::get('/', 'index');
+   Route::get('create', 'create');
+   Route::post('/store', 'store');
+});
+// Route::get('/test', function () {
+//     return view('welcome');
+// });
