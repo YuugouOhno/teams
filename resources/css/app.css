@@ -3,78 +3,86 @@
 @tailwind components;
 @tailwind utilities;
 
-
-#portfolio{
-	background: url(../images/bg.png) center no-repeat;
+#portfolio {
+    background: url(../images/bg.png) center no-repeat;
     height: 150px;
     background-size: cover;
 }
 
-.hover-bright:hover{
+.hover-bright:hover {
     filter: brightness(110%);
 }
 
-.bg-img{
+.bg-img {
     background: url(../images/bg.png) top center no-repeat fixed;
     width: 100%;
-	height: 100vh;
-	background-size: cover;
+    height: 100vh;
+    background-size: cover;
 }
 
 /* entrance */
-.entrance{
+.entrance {
     text-align: center;
     margin-top: 60vh;
 }
 
 /* gatefold */
 .gatefold {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
     text-align: center;
 }
 
 .gatefold::before,
 .gatefold::after {
-	content: '';
-	position: fixed;
-	top: 0;
-	width: 100%;
-	height: 100vh;
-	background: url(../images/bg.png) top center no-repeat;
-	background-size: cover;
-	-webkit-transition: all 3s;
-	transition: all 3s;
-	z-index: 1;
+    content: "";
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(../images/bg.png) top center no-repeat;
+    background-size: cover;
+    -webkit-transition: all 3s;
+    transition: all 3s;
+    z-index: 1;
 }
 
 .gatefold::before {
-	left: 0;
-	clip: rect(0px 50vw 100vh 0px);
+    left: 0;
+    clip: rect(0px 50vw 100vh 0px);
 }
 
 .gatefold::after {
-	right: 0;
-	clip: rect(0px 100vw 100vh 50vw);
+    right: 0;
+    clip: rect(0px 100vw 100vh 50vw);
 }
-
 
 /* checkbox */
 .check {
-	display: none;
+    display: none;
 }
 
-.check.fade:checked ~ .switch.fade::before{
-	content: none;
+.check.fade:checked ~ .switch.fade::before {
+    content: none;
 }
 
 .check.fade:checked ~ .gatefold::before {
-	-webkit-transform: translate3d(-1100px,0,0);
-	transform: translate3d(-1100px,0,0);
+    -webkit-transform: translate3d(-1100px, 0, 0);
+    transform: translate3d(-1100px, 0, 0);
     opacity: 0;
 }
 .check.fade:checked ~ .gatefold::after {
-	-webkit-transform: translate3d(1100px,0,0);
-	transform: translate3d(1100px,0,0);
+    -webkit-transform: translate3d(1100px, 0, 0);
+    transform: translate3d(1100px, 0, 0);
     opacity: 0;
+}
+
+h1 {
+    @apply text-2xl;
+}
+h2 {
+    @apply text-xl;
+}
+h3 {
+    @apply text-lg;
 }
