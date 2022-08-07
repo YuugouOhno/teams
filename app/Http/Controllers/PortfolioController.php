@@ -51,7 +51,6 @@ class PortfolioController extends Controller
             $input['slide'] = $slide[1];
         }
         $draft = $draft->create($input);
-
         return redirect('/');
     }
 

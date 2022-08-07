@@ -30,7 +30,7 @@
                 </div>
                 <div class="p-2">
                     <h2 class="font-bold py-1">機能（null可）</h2>
-                    <textarea name="function">{{ $draft->functions }}</textarea>
+                    <textarea name="function">{{ $draft->function }}</textarea>
                 </div>
                 <div class="p-2">
                     <h2 class="font-bold py-1">プログラミング経験（null可）</h2>
