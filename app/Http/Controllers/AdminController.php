@@ -44,7 +44,7 @@ class AdminController extends Controller
 
     public function register()
     {
-        return view("admin/register_student");
+        return view("admin/register_student")->with(["error_message" => ""]);
     }
 
     public function storeStudent(Request $request, User $user)
@@ -53,7 +53,14 @@ class AdminController extends Controller
         $admission_month = $request["student"]["month"];
         $admission_term = $request["student"]["term"];
 
-        $user->name = $admission_year . $admission_month  . $admission_term;
+        $student_name = $admission_year . $admission_month  . $admission_term;
+
+        // 既に存在しているユーザーを登録しようとした際のバリデーション
+        if(User::where("name",$student_name)->exists()){
+            return view("admin/register_student")->with(["error_message" => "既に存在しているユーザーです！！"]);
+        };
+
+        $user->name = $student_name;
 
         if($admission_term == "E"){
             $user->password = Hash::make($admission_year . $admission_month . "early");

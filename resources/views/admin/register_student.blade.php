@@ -36,5 +36,10 @@
     </div>
     <button type="submit">送信</button>
   </form>
+  <div>
+    <p class="text-red-500">
+        {{$error_message}}
+    </p>
+    </div>
 </body>
 </x-app-layout>
