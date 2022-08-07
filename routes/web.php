@@ -22,10 +22,12 @@ use App\Http\Controllers\AdminController;
 // });
 
 Route::middleware(['auth', 'can:isAdmin'])->group(function(){
-   Route::get('/admin', [AdminController::class, 'index']);
-   Route::get('/admin/{draft}', [AdminController::class, 'create']);
-   Route::post('/admin/store', [AdminController::class, 'store']);
-   Route::post('/admin/store_tag', [AdminController::class, 'store_tag']);
+    Route::get('/admin', [AdminController::class, 'index']);
+    Route::get("/admin/register_student", [AdminController::class, "register"]);
+    Route::post("/admin/store_student", [AdminController::class, "storeStudent"]);
+    Route::post('/admin/store', [AdminController::class, 'store']);
+    Route::post('/admin/store_tag', [AdminController::class, 'store_tag']);
+    Route::get('/admin/{draft}', [AdminController::class, 'create']);
 });
 
 // Route::get('/dashboard', function () {
@@ -34,13 +36,16 @@ Route::middleware(['auth', 'can:isAdmin'])->group(function(){
 
 require __DIR__.'/auth.php';
 
-Route::controller(PortfolioController::class)->group(function() {
-   Route::get('/portfolio', 'index')->name('index');
-   Route::get('/create', 'create')->name('create');
-   Route::get('/create_comment/{portfolio}', 'create_comment');
-   Route::post('/store', 'store');
-   Route::post('/store_comment', 'store_comment');
-   Route::get('/portfolio/{portfolio}', 'show');
-   Route::get('search_form', 'search_form')->name('search_form');
+Route::group(["middleware" => ["auth"]], function() {
+    Route::controller(PortfolioController::class)->group(function() {
+        Route::get('/portfolio', 'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::get('/create_comment/{portfolio}', 'create_comment');
+        Route::post('/store', 'store');
+        Route::post('/store_comment', 'store_comment');
+        Route::get('/portfolio/{portfolio}', 'show');
+        Route::get('search_form', 'search_form')->name('search_form');
+    });
 });
+
 
