@@ -9,14 +9,14 @@
     <label class="switch fade" for="checked-fade"></label>
     <div class="gatefold">
     
-        <div class="sm:grid sm:grid-cols-3 sm:gap-6 sm:mx-6 sm:my-6 mx-3 my-3">
+        <div class="max-w-7xl sm:grid sm:grid-cols-3 sm:gap-6 sm:mx-auto sm:my-6 mx-3 my-3">
         @foreach($items as $item)
-            <div class="border border-solid rounded border-gray-300 px-6 py-4 bg-white">
-                <h2 class="text-xl font-bold hover:text-blue-800 mb-2"><a href="/portfolio/{{ $item->id }}">
+            <div class="border border-solid rounded border-gray-300 px-6 py-4 sm:mb-0 mb-6 bg-white">
+                <h2 class="text-xl font-bold mb-2"><a href="/portfolio/{{ $item->id }}">
                     {{ $item->title }}
                 </h2></a>
                 <a href="/portfolio/{{ $item->id }}">
-                    <img class="mb-2 hover-bright" src="{{ asset('second.png') }}">
+                    <img class="mb-2 hover-bright" src="https://katsurao-diary.com/images/news/second.png">
                 </a>
                 <h2 class="text-gray-600 text-sm text-left mb-2">
                     {{ $item->overview }}
