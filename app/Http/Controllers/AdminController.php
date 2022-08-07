@@ -57,7 +57,7 @@ class AdminController extends Controller
 
         // 既に存在しているユーザーを登録しようとした際のバリデーション
         if(User::where("name",$student_name)->exists()){
-            return view("admin/register_student")->with(["error_message" => "既に存在しているユーザーです！！"]);
+        return redirect("admin/register_student")->with("flash_message", "既に存在しているユーザーです！");
         };
 
         $user->name = $student_name;
@@ -71,6 +71,6 @@ class AdminController extends Controller
         $user->role = 4;
         $user->save();
 
-        return redirect("/portfolio");
+        return redirect("admin/register_student")->with("flash_message", "新規ユーザーの登録が完了しました！");
     }
 }

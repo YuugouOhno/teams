@@ -5,6 +5,12 @@
         </h2>
     </x-slot>
 <body>
+    @if (session('flash_message'))
+        <h2 class="flash_message text-red-600 font-bold">
+            {{ session('flash_message') }}
+        </h2>
+    @endif
+
   <form action="/admin/store_student" method="POST">
     @csrf
     <div class="flex">
