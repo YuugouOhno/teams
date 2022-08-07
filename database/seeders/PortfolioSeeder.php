@@ -41,6 +41,10 @@ class PortfolioSeeder extends Seeder
             'deploy_url' => "https://asagohannnnnnnnnn.herokuapp.com/",
             'overview' => "「キティー流!!体重変換シミュレーター」という私が初めて参加したハッカソンで開発したアプリケーションです。
                 体重をキティー流に変換することができます。",
+            "background" => "私が参加したハッカソンのテーマは思わずニヤッとするアプリでした。そこで、思わずニヤッとするとはなんだろうと考えた結果、キティちゃんのように体重をりんごやいろいろなもので例えることができたら面白いのではないかと思い、作成いたしました。",
+            'slide' => 'https://docs.google.com/presentation/d/e/2PACX-1vQH281BJZqPdhoFOsoEABNtvVdcoyzw_KXK5E7wRJbhqGK1ZV1QVznN0N4LsK9gHNdrJ_gAjbvyNwpg/embed?start=false&loop=false&delayms=3000',
+            'function' => '自分の体重を入力すると、さまざまなものの重さに変換することができます。左側のボタンを押すとランダムで変換されていくので、色々試して遊んでみてください',
+            'experience' => '全員がハッカソン初体験でした。私もハッカソンに参加した時はカレッジに入りたてでLaravelのこともほとんどわからないような状態でのスタートだったと思います。',
             "created_at" => date("2022-08-06 17:53:21"),
             "updated_at" => date("2022-08-06 17:53:21"),
         ]);
@@ -72,6 +76,6 @@ class PortfolioSeeder extends Seeder
             "created_at" => date("2022-08-06 17:53:21"),
             "updated_at" => date("2022-08-06 17:53:21"),
         ]);
-        
+
     }
 }

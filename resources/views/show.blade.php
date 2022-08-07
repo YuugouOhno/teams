@@ -79,10 +79,10 @@
                 <a href="#comment_form" class="inline-block bg-white hover:bg-gray-100 active:bg-gray-200 focus-visible:ring ring-indigo-300 border text-gray-500 text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-4 md:px-8 py-2 md:py-3">コメントを書く</a>
             </div>
 
-            <div class="divide-y">
+            <div class="divide-y ">
                 <!-- review - start -->
                 @foreach($portfolio->comments as $comment)
-                <div class="flex flex-col bg-white gap-3 py-4 md:py-8">
+                <div class="flex flex-col bg-white gap-3 py-4 md:py-8 bg-gray-100">
                     <div>
                         @if($comment->role == 1)
                             <span class="block text-sm font-bold">メンター</span>
