@@ -13,4 +13,8 @@ class Comment extends Model
         'role',
         'portfolio_id'
     ];
+
+    public function portfolio() {
+        return $this->belongsTo('App\Models\Portfolio');
+    }
 }

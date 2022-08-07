@@ -5,7 +5,7 @@
 </div><!--/#home-->
 
     <body>
-        <div class="bg-white py-6 sm:py-8 lg:py-12">
+        <div class="bg-gray-100 py-6 sm:py-8 lg:py-12">
             <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
                 <!-- text - start -->
                 <div class="mb-10 md:mb-16">
@@ -45,17 +45,17 @@
                     </div>
 
                     <div class="sm:col-span-2">
-                        <label for="background" class="inline-block text-gray-800 text-sm sm:text-base mb-2">制作背景（400文字以内）</label>
+                        <label for="background" class="inline-block text-gray-800 text-sm sm:text-base mb-2">制作背景（400文字以内）*</label>
                         <textarea name="background" class="w-full h-32 bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"></textarea>
                     </div>
 
                     <div class="sm:col-span-2">
-                        <label for="function" class="inline-block text-gray-800 text-sm sm:text-base mb-2">機能説明（400文字以内）</label>
+                        <label for="function" class="inline-block text-gray-800 text-sm sm:text-base mb-2">機能説明（400文字以内）*</label>
                         <textarea name="function" class="w-full h-32 bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"></textarea>
                     </div>
 
                     <div class="sm:col-span-2">
-                        <label for="usage" class="inline-block text-gray-800 text-sm sm:text-base mb-2">使い方（400文字）</label>
+                        <label for="usage" class="inline-block text-gray-800 text-sm sm:text-base mb-2">使い方（400文字）*</label>
                         <textarea name="usage" class="w-full h-32 bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"></textarea>
                     </div>
 
