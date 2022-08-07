@@ -62,8 +62,8 @@
                 <div class="p-2">
                     <input type="hidden" name="draft" value="{{ $draft->id }}"/>
                 </div>
-                <div class="p-2 pb-20">
-                    <button class="bg-indigo-400 px-5 py-2 rounded-md hover:bg-indigo-500 duration-100" type="submit">保存</button>
+                <div class="p-2">
+                    <button class="bg-indigo-400 px-5 py-2 rounded-md hover:bg-indigo-500 duration-100" type="submit">送信</button>
                 </div>
             </form>
 
