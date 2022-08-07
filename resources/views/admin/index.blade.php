@@ -7,7 +7,7 @@
 <body>
     <form action="/admin/store_tag" method="POST">
         @csrf
-        <div class="px-10 pt-5 ">
+        <div class="px-10 pt-5">
             <h1 class="font-bold">タグの追加</h1>
         </div>
         <div class="flex items-center px-10 py-5">
