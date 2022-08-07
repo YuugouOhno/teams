@@ -2,7 +2,7 @@
 
 <div id="portfolio">
     <h2 class="text-white text-center md:text-6xl font-serif pt-7 text-5xl">PORTFOLIO</h2>
-</div><!--/#home-->    
+</div><!--/#home-->
 
 <body>
     <div class="bg-white py-6 sm:py-8 lg:py-12">
@@ -43,7 +43,7 @@
                     <p class="text-gray-500 mb-4">{{$portfolio->experience}}</p>
                 </div>
                 <!-- feature - end -->
-                  
+
                 <!-- feature - start -->
                 <div class="flex flex-col border rounded-lg p-4 md:p-6">
                     <h3 class="text-lg md:text-xl font-semibold mb-2">URL</h3>
@@ -55,13 +55,13 @@
                     <p class="text-gray-500 mb-2">{{$portfolio->github_url}}</p></a>
                 </div>
                 <!-- feature - end -->
-                
+
                 <div class="g-slide flex flex-col border rounded-lg p-4 md:p-6">
                     <h3 class="text-lg md:text-xl font-semibold mb-2">卒業スライド</h3>
                     <iframe src="{{ $portfolio->slide }}"></iframe>
                 </div>
 
-                
+
                 <div class="flex flex-col border rounded-lg p-4 md:p-6">
                     <h3 class="text-lg md:text-xl font-semibold mb-2">youtube</h3>
                     <iframe src={{'https://www.youtube.com/embed/' . $portfolio->movie_url}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
