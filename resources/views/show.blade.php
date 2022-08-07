@@ -1,9 +1,9 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            ポートフォリオしょーさいページ
-        </h2>
-    </x-slot>
+
+<div id="portfolio">
+    <h2 class="text-white text-center md:text-6xl font-serif pt-7 text-5xl">PORTFOLIO</h2>
+</div><!--/#home-->    
+
 <body>
     <div class="bg-white py-6 sm:py-8 lg:py-12">
         <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
@@ -21,13 +21,7 @@
             </div>
             <!-- text - end -->
 
-            <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8">
-                <!-- feature - start -->
-                <div class="flex flex-col border rounded-lg p-4 md:p-6">
-                    <h3 class="text-lg md:text-xl font-semibold mb-2">デプロイURL</h3>
-                    <p class="text-gray-500 mb-4">{{$portfolio->deploy_url}}</p>
-                </div>
-                <!-- feature - end -->
+            <div class="max-w-7xl grid sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8 sm:mx-auto sm:my-6 mx-3 my-3">
 
                 <!-- feature - start -->
                 <div class="flex flex-col border rounded-lg p-4 md:p-6">
@@ -49,18 +43,16 @@
                     <p class="text-gray-500 mb-4">{{$portfolio->experience}}</p>
                 </div>
                 <!-- feature - end -->
-
+                  
                 <!-- feature - start -->
                 <div class="flex flex-col border rounded-lg p-4 md:p-6">
-                    <h3 class="text-lg md:text-xl font-semibold mb-2">使い方</h3>
-                    <p class="text-gray-500 mb-4">{{$portfolio->usage}}</p>
-                </div>
-                <!-- feature - end -->
-
-                <!-- feature - start -->
-                <div class="flex flex-col border rounded-lg p-4 md:p-6">
-                    <h3 class="text-lg md:text-xl font-semibold mb-2">Github</h3>
-                    <p class="text-gray-500 mb-4">{{$portfolio->github_url}}</p>
+                    <h3 class="text-lg md:text-xl font-semibold mb-2">URL</h3>
+                    <p class="text-black">デプロイ先</p>
+                    <a href="{{$portfolio->deploy_url}}">
+                    <p class="text-gray-500 mb-2">{{$portfolio->deploy_url}}</p></a>
+                    <p class="text-black">GitHub</p>
+                    <a href="{{$portfolio->github_url}}">
+                    <p class="text-gray-500 mb-2">{{$portfolio->github_url}}</p></a>
                 </div>
                 <!-- feature - end -->
                 
@@ -68,6 +60,7 @@
                     <h3 class="text-lg md:text-xl font-semibold mb-2">卒業スライド</h3>
                     <iframe src="{{ $portfolio->slide }}"></iframe>
                 </div>
+
                 
                 <div class="flex flex-col border rounded-lg p-4 md:p-6">
                     <h3 class="text-lg md:text-xl font-semibold mb-2">youtube</h3>
