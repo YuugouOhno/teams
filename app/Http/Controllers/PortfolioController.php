@@ -52,7 +52,7 @@ class PortfolioController extends Controller
         }
         $draft = $draft->create($input);
 
-        return redirect('/');
+        return redirect('/portfolio')->with('successMessage', '登録に成功しました！');
     }
 
     public function create_comment($portfolio)
