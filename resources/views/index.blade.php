@@ -26,9 +26,9 @@
                 
                 </div>
                 </a>
-                <h2 class="text-gray-600 text-sm text-left mb-2">
+                <h2 class="text-gray-600 text-sm text-left mb-2"><a href="/portfolio/{{ $item->id }}">
                     {{ $item->overview }}
-                </h2>
+                </h2></a>
                 <h2>
                     @foreach($item->tags as $tag)
                         <a href="/portfolio?tags%5B%5D={{ $tag->name }}" class="text-blue-600 hover:text-blue-800">
