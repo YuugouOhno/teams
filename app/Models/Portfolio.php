@@ -24,4 +24,8 @@ class Portfolio extends Model
     public function tags(){
         return $this->belongsToMany('App\Models\Tag');
     }
+
+    public function comments() {
+        return $this->hasMany('App\Models\Comment');
+    }
 }

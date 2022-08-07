@@ -77,6 +77,18 @@
     opacity: 0;
 }
 
+/* Index */
+.div-index {
+    pointer-events: none;
+}
+.div-index:hover {
+    background-color: rgb(229 231 235) !important;
+    transition: 1s;
+}
+.img-index {
+    pointer-events: auto;
+}
+
 h1 {
     @apply text-2xl;
 }
