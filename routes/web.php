@@ -28,15 +28,15 @@ Route::middleware(['auth', 'can:isAdmin'])->group(function(){
    Route::post('/admin/store_tag', [AdminController::class, 'store_tag']);
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
 Route::controller(PortfolioController::class)->group(function() {
-   Route::get('/', 'index');
-   Route::get('/create', 'create');
+   Route::get('/portfolio', 'index')->name('index');
+   Route::get('/create', 'create')->name('create');
    Route::get('/create_comment/{portfolio}', 'create_comment');
    Route::post('/store', 'store');
    Route::post('/store_comment', 'store_comment');
