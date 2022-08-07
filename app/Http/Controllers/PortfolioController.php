@@ -47,11 +47,12 @@ class PortfolioController extends Controller
         if (preg_match('/v=(.+)/', $input['movie_url'], $movie_id)) {
             $input['movie_url'] = $movie_id[1];
         }
-        if (preg_match('/src="(.+)"/', $input['slide'], $slide)) {
+        if (preg_match('/src="(.+?)"/', $input['slide'], $slide)) {
             $input['slide'] = $slide[1];
         }
         $draft = $draft->create($input);
-        return redirect('/');
+
+        return redirect('/portfolio')->with('successMessage', '登録に成功しました！');
     }
 
     public function create_comment($portfolio)

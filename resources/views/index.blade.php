@@ -5,6 +5,15 @@
 </div><!--/#home-->
 
 <body>
+    {{-- フラッシュメッセージ --}}
+    @if (session('successMessage'))
+        <div class="bg-blue-100 border border-blue-500 text-blue-700 px-4 py-3 rounded relative" role="alert">
+            <p class="font-bold text-center absolute">{{ session('successMessage') }}</p>
+            <p class="text-sm text-center">投稿までしばらくお待ちください！</p>
+        </div>
+
+    @endif
+    {{-- フラッシュメッセージ終わり --}}
     <input type="checkbox" class="check fade" id="checked-fade">
     <label class="switch fade" for="checked-fade"></label>
     <div class="gatefold">
@@ -17,13 +26,13 @@
                 </a></h2>
                 <a href="/portfolio/{{ $item->id }}" class="img-index">
                 <div class="flex items-center text-center" style="height: 300px">
-                                
+
                 @if(isset($item->image_path))
                     <img class="" src="{{$item->image_path}}">
                 @else
                     <div class="text-3xl m-auto">画像が存在しません</div>
-                @endif    
-                
+                @endif
+
                 </div>
                 </a>
                 <h2 class="text-gray-600 text-sm text-left mb-2"><a href="/portfolio/{{ $item->id }}">
