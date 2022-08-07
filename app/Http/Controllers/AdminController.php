@@ -47,7 +47,7 @@ class AdminController extends Controller
         return view("admin/register_student");
     }
 
-    public function store_student(Request $request, User $user)
+    public function storeStudent(Request $request, User $user)
     {
         $admission_year = Carbon::now()->year;
         $admission_month = $request["student"]["month"];
@@ -63,5 +63,7 @@ class AdminController extends Controller
 
         $user->role = 4;
         $user->save();
+
+        return redirect("/portfolio");
     }
 }
