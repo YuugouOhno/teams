@@ -22,10 +22,12 @@ use App\Http\Controllers\AdminController;
 // });
 
 Route::middleware(['auth', 'can:isAdmin'])->group(function(){
-   Route::get('/admin', [AdminController::class, 'index']);
-   Route::get('/admin/{draft}', [AdminController::class, 'create']);
-   Route::post('/admin/store', [AdminController::class, 'store']);
-   Route::post('/admin/store_tag', [AdminController::class, 'store_tag']);
+    Route::get('/admin', [AdminController::class, 'index']);
+    Route::get("/admin/register_student", [AdminController::class, "register"]);
+    Route::post("/admin/store_student", [AdminController::class, "store_student"]);
+    Route::post('/admin/store', [AdminController::class, 'store']);
+    Route::post('/admin/store_tag', [AdminController::class, 'store_tag']);
+    Route::get('/admin/{draft}', [AdminController::class, 'create']);
 });
 
 // Route::get('/dashboard', function () {
