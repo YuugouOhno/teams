@@ -16,9 +16,15 @@
                     {{ $item->title }}
                 </h2></a>
                 <a href="/portfolio/{{ $item->id }}">
-                    
-                    <img class="mb-2 hover-bright" src="{{$item->image_path}}">
-                    <div>{{ $item->image_path ?: '画像が存在しません' }}</div>
+                <div class="flex items-center text-center" style="height: 300px">
+                                
+                @if(isset($item->image_path))
+                    <img class="hover-bright" src="{{$item->image_path}}">
+                @else
+                    <div class="text-3xl m-auto">画像が存在しません</div>
+                @endif    
+                
+                </div>
                 </a>
                 <h2 class="text-gray-600 text-sm text-left mb-2">
                     {{ $item->overview }}
