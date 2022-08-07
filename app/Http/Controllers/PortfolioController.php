@@ -46,6 +46,9 @@ class PortfolioController extends Controller
         if (preg_match('/v=(.+)/', $input['movie_url'], $movie_id)) {
             $input['movie_url'] = $movie_id[1];
         }
+        if (preg_match('/src="(.+)"/', $input['slide'], $slide)) {
+            $input['slide'] = $slide[1];
+        }
         $draft = $draft->create($input);
 
         return redirect('/');
