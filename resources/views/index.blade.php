@@ -12,7 +12,7 @@
         <div class="max-w-6xl sm:grid sm:grid-cols-3 sm:gap-6 sm:mx-auto sm:my-6 mx-3 my-3">
         @foreach($items as $item)
             <div class="border border-solid rounded border-gray-300 px-6 py-4 sm:mb-0 mb-6 bg-white">
-                <h2 class="text-xl font-bold mb-2"><a href="/portfolio/{{ $item->id }}">
+                <h2 class="text-xl font-bold"><a href="/portfolio/{{ $item->id }}">
                     {{ $item->title }}
                 </h2></a>
                 <a href="/portfolio/{{ $item->id }}">
