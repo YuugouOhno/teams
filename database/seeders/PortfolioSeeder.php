@@ -19,60 +19,56 @@ class PortfolioSeeder extends Seeder
         DB::table('portfolios')->insert([
             'title' => "松本家通信",
             'deploy_url' => "https://katsurao-diary.com/",
-            'overview' => "「松本家通信」という私が初めて制作したWebアプリケーションです。
-                原発被災地である福島県葛尾村にて展示会などの活動を行っている
-                松本家計画のホームページとして制作しました。
-                作品等の情報公開機能およびメンバー限定の掲示板機能を有しています。",
+            'overview' => "「松本家通信」という私が初めて制作したWebアプリです。
+                原発被災地である福島県葛尾村にて展示会等の活動を行う松本家計画のHPです。
+                作品の情報公開、メンバー限定で掲示板利用が可能です。",
+            "image_path" => "https://katsurao-diary.com/images/news/second.png",
             "created_at" => date("2022-08-06 17:53:21"),
             "updated_at" => date("2022-08-06 17:53:21"),
         ]);
         DB::table('portfolios')->insert([
-            'title' => "松本家通信",
-            'deploy_url' => "https://katsurao-diary.com/",
-            'overview' => "「松本家通信」という私が初めて制作したWebアプリケーションです。
-                原発被災地である福島県葛尾村にて展示会などの活動を行っている
-                松本家計画のホームページとして制作しました。
-                作品等の情報公開機能およびメンバー限定の掲示板機能を有しています。",
+            'title' => "小学生の味方",
+            'deploy_url' => "https://imposters-y-test1.herokuapp.com/",
+            'overview' => "カレッジのハッカソンで出会ったチームで開発したアプリです。
+                小学生の夏休みの宿題をズルして終わらせるべく、一言日記を一瞬で終わらせたり、
+                計算や翻訳をちょうどよく間違える機能を有しています。",
+                "image_path" => "https://imposters-y-test1.herokuapp.com/CSS/img/img_maniau.png",
             "created_at" => date("2022-08-06 17:53:21"),
             "updated_at" => date("2022-08-06 17:53:21"),
         ]);
         DB::table('portfolios')->insert([
-            'title' => "松本家通信",
-            'deploy_url' => "https://katsurao-diary.com/",
-            'overview' => "「松本家通信」という私が初めて制作したWebアプリケーションです。
-                原発被災地である福島県葛尾村にて展示会などの活動を行っている
-                松本家計画のホームページとして制作しました。
-                作品等の情報公開機能およびメンバー限定の掲示板機能を有しています。",
+            'title' => "キティー流!!体重変換シミュレーター",
+            'deploy_url' => "https://asagohannnnnnnnnn.herokuapp.com/",
+            'overview' => "「キティー流!!体重変換シミュレーター」という私が初めて参加したハッカソンで開発したアプリケーションです。
+                体重をキティー流に変換することができます。",
             "created_at" => date("2022-08-06 17:53:21"),
             "updated_at" => date("2022-08-06 17:53:21"),
         ]);
         DB::table('portfolios')->insert([
-            'title' => "松本家通信",
-            'deploy_url' => "https://katsurao-diary.com/",
-            'overview' => "「松本家通信」という私が初めて制作したWebアプリケーションです。
-                原発被災地である福島県葛尾村にて展示会などの活動を行っている
-                松本家計画のホームページとして制作しました。
-                作品等の情報公開機能およびメンバー限定の掲示板機能を有しています。",
+            'title' => " Jugglink",
+            'deploy_url' => "https://jugglink.herokuapp.com/",
+            'overview' => "「Jugglink」という私が初めて制作したWebアプリケーションです。
+                ジャグリングをする人向けの動画投稿サイトとして開発しました。
+                ジャグリングの道具や技などの要素で絞り込み検索が可能です。",
+            "image_path" => "https://jugglinkbucket.s3.amazonaws.com/jugglink_icon/minil.PNG",
             "created_at" => date("2022-08-06 17:53:21"),
             "updated_at" => date("2022-08-06 17:53:21"),
         ]);
         DB::table('portfolios')->insert([
-            'title' => "松本家通信",
+            'title' => "松本家架空日記",
             'deploy_url' => "https://katsurao-diary.com/",
-            'overview' => "「松本家通信」という私が初めて制作したWebアプリケーションです。
-                原発被災地である福島県葛尾村にて展示会などの活動を行っている
-                松本家計画のホームページとして制作しました。
-                作品等の情報公開機能およびメンバー限定の掲示板機能を有しています。",
+            'overview' => "「松本家架空日記」は参加型作品の一部です。
+                「人に住まれなくなった原発被災地域の家」を題材にした展示を企画しており、
+                題材とされている家に関する架空の日記を来訪者自身が投稿することができます。",
+            "image_path" => "https://katsurao-diary.com/images/bookcover.jpg",
             "created_at" => date("2022-08-06 17:53:21"),
             "updated_at" => date("2022-08-06 17:53:21"),
         ]);
         DB::table('portfolios')->insert([
-            'title' => "松本家通信",
-            'deploy_url' => "https://katsurao-diary.com/",
-            'overview' => "「松本家通信」という私が初めて制作したWebアプリケーションです。
-                原発被災地である福島県葛尾村にて展示会などの活動を行っている
-                松本家計画のホームページとして制作しました。
-                作品等の情報公開機能およびメンバー限定の掲示板機能を有しています。",
+            'title' => "レバテックギャラリー",
+            'deploy_url' => "https://levtech_gallery.herokuapp.com/",
+            'overview' => "「レバテックギャラリー」というメンターチームで制作したWebアプリケーションです。
+                レバテックカレッジの過去の生徒が作成した成果物を一覧で見ることが可能です。",
             "created_at" => date("2022-08-06 17:53:21"),
             "updated_at" => date("2022-08-06 17:53:21"),
         ]);
