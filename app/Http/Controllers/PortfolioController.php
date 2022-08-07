@@ -32,7 +32,8 @@ class PortfolioController extends Controller
 
     public function show(Portfolio $portfolio)
     {
-        return view('show', compact('portfolio'));
+        $portfolio_count = $portfolio->comments()->count();
+        return view('show', compact('portfolio', 'portfolio_count'));
     }
 
     public function create()
