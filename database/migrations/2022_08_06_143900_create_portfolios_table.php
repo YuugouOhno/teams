@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('background', 300)->nullable();
             $table->text('function')->nullable();
             $table->text('experience')->nullable();
-            $table->string('slide', 100)->nullable();
+            $table->string('slide', 300)->nullable();
             $table->text('usage')->nullable();
             $table->string('image_path', 100)->nullable();
             $table->string('movie_url', 100)->nullable();

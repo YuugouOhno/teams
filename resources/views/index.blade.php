@@ -16,7 +16,9 @@
                     {{ $item->title }}
                 </h2></a>
                 <a href="/portfolio/{{ $item->id }}">
-                    <img class="mb-2 hover-bright" src="https://katsurao-diary.com/images/news/second.png">
+                    
+                    <img class="mb-2 hover-bright" src="{{$item->image_path}}">
+                    <div>{{ $item->image_path ?: '画像が存在しません' }}</div>
                 </a>
                 <h2 class="text-gray-600 text-sm text-left mb-2">
                     {{ $item->overview }}

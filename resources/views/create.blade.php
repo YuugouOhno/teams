@@ -1,17 +1,18 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            ポートフォリオ投稿ページ
-        </h2>
-    </x-slot>
+
+<div id="portfolio">
+    <h2 class="text-white text-center md:text-6xl font-serif pt-7 text-5xl">CREATE</h2>
+</div><!--/#home-->
+
     <body>
         <div class="bg-white py-6 sm:py-8 lg:py-12">
             <div class="max-w-screen-2xl px-4 md:px-8 mx-auto">
                 <!-- text - start -->
                 <div class="mb-10 md:mb-16">
-                    <h2 class="text-gray-800 text-2xl lg:text-3xl font-bold text-center mb-4 md:mb-6">ポートフォリオをみんなに公開しよう！</h2>
-
-                    <p class="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">以下の記述欄にポートフォリの詳細を記述してください。メンターが確認後、ポートフォリオ一覧ページに投稿いたします。</p>
+                    <p class="max-w-screen-md text-gray-500 md:text-lg text-center mx-auto">
+                        以下の記述欄にポートフォリの詳細を記述してください。<br>
+                        メンターが確認後、ポートフォリオ一覧ページに投稿いたします。
+                    </p>
                 </div>
                 <!-- text - end -->
 
@@ -29,7 +30,7 @@
                     </div>
 
                     <div class="sm:col-span-2">
-                        <label for="title" class="inline-block text-gray-800 text-sm sm:text-base mb-2">アプリタイトル*</label>
+                        <label for="title" class="inline-block text-gray-800 text-sm sm:text-base mb-2">アプリタイトル（30文字以内）*</label>
                         <input name="title" class="w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2" />
                     </div>
 
@@ -39,28 +40,28 @@
                     </div>
 
                     <div class="sm:col-span-2">
-                        <label for="overview" class="inline-block text-gray-800 text-sm sm:text-base mb-2">概要*</label>
+                        <label for="overview" class="inline-block text-gray-800 text-sm sm:text-base mb-2">概要（140文字以内）*</label>
                         <textarea name="overview" class="w-full h-32 bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"></textarea>
                     </div>
 
                     <div class="sm:col-span-2">
-                        <label for="background" class="inline-block text-gray-800 text-sm sm:text-base mb-2">背景</label>
+                        <label for="background" class="inline-block text-gray-800 text-sm sm:text-base mb-2">制作背景（400文字以内）</label>
                         <textarea name="background" class="w-full h-32 bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"></textarea>
                     </div>
 
                     <div class="sm:col-span-2">
-                        <label for="function" class="inline-block text-gray-800 text-sm sm:text-base mb-2">機能</label>
+                        <label for="function" class="inline-block text-gray-800 text-sm sm:text-base mb-2">機能説明（400文字以内）</label>
                         <textarea name="function" class="w-full h-32 bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"></textarea>
                     </div>
 
                     <div class="sm:col-span-2">
-                        <label for="slide" class="inline-block text-gray-800 text-sm sm:text-base mb-2">スライド</label>
-                        <textarea name="slide" class="w-full h-32 bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"></textarea>
+                        <label for="usage" class="inline-block text-gray-800 text-sm sm:text-base mb-2">使い方（400文字）</label>
+                        <textarea name="usage" class="w-full h-32 bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"></textarea>
                     </div>
 
                     <div class="sm:col-span-2">
-                        <label for="usage" class="inline-block text-gray-800 text-sm sm:text-base mb-2">使い方</label>
-                        <textarea name="usage" class="w-full h-32 bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"></textarea>
+                        <label for="slide" class="inline-block text-gray-800 text-sm sm:text-base mb-2">スライドURL</label>
+                        <textarea name="slide" class="w-full h-32 bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"></textarea>
                     </div>
 
                     <div class="sm:col-span-2">
