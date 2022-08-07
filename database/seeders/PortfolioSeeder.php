@@ -51,6 +51,7 @@ class PortfolioSeeder extends Seeder
                 ジャグリングをする人向けの動画投稿サイトとして開発しました。
                 ジャグリングの道具や技などの要素で絞り込み検索が可能です。",
             "image_path" => "https://jugglinkbucket.s3.amazonaws.com/jugglink_icon/minil.PNG",
+            "movie_url" => "8ewXZYsFyoM",
             "created_at" => date("2022-08-06 17:53:21"),
             "updated_at" => date("2022-08-06 17:53:21"),
         ]);
