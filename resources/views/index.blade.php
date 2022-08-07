@@ -7,8 +7,8 @@
 <body>
     {{-- フラッシュメッセージ --}}
     @if (session('successMessage'))
-        <div class="bg-blue-100 border border-blue-500 text-blue-700 px-4 py-3 rounded" role="alert">
-            <p class="font-bold text-center">{{ session('successMessage') }}</p>
+        <div class="bg-blue-100 border border-blue-500 text-blue-700 px-4 py-3 rounded relative" role="alert">
+            <p class="font-bold text-center absolute">{{ session('successMessage') }}</p>
             <p class="text-sm text-center">投稿までしばらくお待ちください！</p>
         </div>
 
