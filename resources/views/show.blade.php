@@ -39,15 +39,14 @@
 
                 <!-- feature - start -->
                 <div class="flex flex-col border rounded-lg p-4 md:p-6">
-                    <h3 class="text-lg md:text-xl font-semibold mb-2">使い方</h3>
-                    <p class="text-gray-500 mb-4">{{$portfolio->usage}}</p>
+                    <h3 class="text-lg md:text-xl font-semibold mb-2">プログラミング経験</h3>
+                    <p class="text-gray-500 mb-4">{{$portfolio->experience}}</p>
                 </div>
                 <!-- feature - end -->
 
                 <!-- feature - start -->
                 <div class="flex flex-col border rounded-lg p-4 md:p-6">
-                    <h3 class="text-lg md:text-xl font-semibold mb-2">プログラミング経験</h3>
-                    <p class="text-gray-500 mb-4">{{$portfolio->experience}}</p>
+                    <h3 class="text-lg md:text-xl font-semibold mb-2">Googleスライド</h3>
                 </div>
                 <!-- feature - end -->
 
