@@ -11,15 +11,15 @@
 
         <div class="max-w-6xl sm:grid sm:grid-cols-3 sm:gap-6 sm:mx-auto sm:my-6 mx-3 my-3">
         @foreach($items as $item)
-            <div class="border border-solid rounded border-gray-300 px-6 py-4 sm:mb-0 mb-6 bg-white">
+            <div class="border border-solid rounded border-gray-300 px-6 py-4 sm:mb-0 mb-6 bg-white div-index">
                 <h2 class="text-xl font-bold"><a href="/portfolio/{{ $item->id }}">
                     {{ $item->title }}
-                </h2></a>
-                <a href="/portfolio/{{ $item->id }}">
+                </a></h2>
+                <a href="/portfolio/{{ $item->id }}" class="img-index">
                 <div class="flex items-center text-center" style="height: 300px">
                                 
                 @if(isset($item->image_path))
-                    <img class="hover-bright" src="{{$item->image_path}}">
+                    <img class="" src="{{$item->image_path}}">
                 @else
                     <div class="text-3xl m-auto">画像が存在しません</div>
                 @endif    
