@@ -5,23 +5,6 @@
         </h2>
     </x-slot>
 <body>
-    <form action="/admin/store_tag" method="POST">
-        @csrf
-        <div class="px-10 pt-5">
-            <h1 class="font-bold">タグの追加</h1>
-        </div>
-        <div class="flex items-center px-10 py-5">
-
-            <div class="px-4">
-                <input class="rounded-md" type="text" name="name" placeholder="新規タグ名"/>
-            </div>
-            <div>
-                <button class="bg-indigo-400 px-5 py-2 rounded-md hover:bg-indigo-500 duration-100" type="submit">送信</button>
-            </div>
-
-        </div>
-    </form>
-
     <div class="px-10 pt-5 font-bold">
         <h1>認証待ちポートフォリオ一覧ページ</h1>
     </div>
@@ -34,5 +17,31 @@
             </div>
         @endforeach
     </div>
+
+    <form action="/admin/store_tag" method="POST">
+        @csrf
+        <div class="px-10 pt-5">
+            <h1 class="font-bold">タグの追加</h1>
+        </div>
+        <div class="flex items-center px-10 py-5">
+            <div class="px-4">
+                <input class="rounded-md" type="text" name="name" placeholder="新規タグ名"/>
+            </div>
+            <div>
+                <button class="bg-indigo-400 px-5 py-2 rounded-md hover:bg-indigo-500 duration-100" type="submit">送信</button>
+            </div>
+        </div>
+    </form>
+    <div class="px-10 pt-5">
+            <h1 class="font-bold">タグ一覧</h1>
+        </div>
+    <div class="float px-10 py-5">
+        @foreach($tags as $tag)
+        <div class='inline-block border-solid border-2 border-black m-1 p-1'>
+            <p>{{ $tag->name }}</p>
+        </div>
+        @endforeach
+    </div>
 </body>
 </x-app-layout>
+

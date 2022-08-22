@@ -12,10 +12,11 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    public function index(Draft $draft)
+    public function index(Draft $draft, Tag $tag)
     {
         $drafts = $draft->get();
-        return view('admin/index', compact('drafts'));
+        $tags = $tag->getSort();
+        return view('admin/index', compact('drafts', 'tags'));
     }
 
     public function create(Draft $draft, Tag $tag)

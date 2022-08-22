@@ -12,7 +12,12 @@ class Tag extends Model
         'name'
     ];
 
+    public function getSort(){
+        return $this->orderBy('name', 'ASC')->get();
+    }
+
     public function portfolios(){
         return $this->belongsToMany('App\Models\Portfolio');
     }
+
 }
