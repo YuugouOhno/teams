@@ -23,5 +23,6 @@ class Draft extends Model
         'usage',
         'movie_url',
         'github_url',
+        'creation_time'
     ];
 }

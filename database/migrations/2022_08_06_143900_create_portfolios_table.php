@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
+    /**˜
      * Run the migrations.
      *
      * @return void
@@ -26,6 +26,7 @@ return new class extends Migration
             $table->string('image_path', 100)->nullable();
             $table->string('movie_url', 100)->nullable();
             $table->string('github_url', 100)->nullable();
+            $table->string('creation_time', 100)->nullable();
             $table->timestamps();
         });
     }
