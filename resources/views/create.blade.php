@@ -74,6 +74,11 @@
                         <textarea name="github_url" class="w-full h-32 bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"></textarea>
                     </div>
 
+                    <div class="sm:col-span-2">
+                        <label for="creation_time" class="inline-block text-gray-800 text-sm sm:text-base mb-2">制作時間</label>
+                        <textarea name="creation_time" class="w-full h-32 bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"></textarea>
+                    </div>
+
                     <div class="sm:col-span-2 flex justify-between items-center">
                         <button class="inline-block bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3">投稿</button>
 

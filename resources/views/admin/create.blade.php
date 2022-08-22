@@ -45,6 +45,10 @@
                     <textarea name="usage">{{ $draft->usage }}</textarea>
                 </div>
                 <div class="p-2">
+                    <h2 class="font-bold py-1">制作期間（null可）</h2>
+                    <textarea name="creation_time">{{ $draft->creation_time }}</textarea>
+                </div>
+                <div class="p-2">
                     <h2 class="font-bold py-1">youtubeに動画をアップした方はurlを教えてください（null可）</h2>
                     <input name="movie_url" value="{{ $draft->movie_url }}"/>
                 </div>

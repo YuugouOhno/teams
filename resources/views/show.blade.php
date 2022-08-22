@@ -41,6 +41,8 @@
                 <div class="flex flex-col bg-white border rounded-lg p-4 md:p-6">
                     <h3 class="text-lg md:text-xl font-semibold mb-2">プログラミング経験</h3>
                     <p class="text-gray-500 mb-4">{{$portfolio->experience}}</p>
+                    <h3 class="text-lg md:text-xl font-semibold mb-2">制作時間</h3>
+                    <p class="text-gray-500 mb-4">{{$portfolio->creation_time}}</p>
                 </div>
                 <!-- feature - end -->
 
