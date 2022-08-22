@@ -55,6 +55,11 @@
                     </div>
 
                     <div class="sm:col-span-2">
+                        <label for="experience" class="inline-block text-gray-800 text-sm sm:text-base mb-2">プログラミング経験（400文字以内）*</label>
+                        <textarea name="experience" class="w-full h-32 bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"></textarea>
+                    </div>
+
+                    <div class="sm:col-span-2">
                         <label for="usage" class="inline-block text-gray-800 text-sm sm:text-base mb-2">使い方（400文字）*</label>
                         <textarea name="usage" class="w-full h-32 bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2"></textarea>
                     </div>
