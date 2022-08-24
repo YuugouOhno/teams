@@ -85,7 +85,7 @@
     background-color: rgb(229 231 235) !important;
     transition: 1s;
 }
-.img-index {
+.img-index, .title-index, .overview-index, .tag-index{
     pointer-events: auto;
 }
 
