@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Auth;
 
 class PortfolioController extends Controller
 {
-    public function index(Portfolio $portfolio, Tag $tag, Request $request)
+    public function index(Portfolio $portfolio, Tag $tag, Draft $draft, Request $request)
     {
         $tag_names = $request->input('tags');
-
+        
         if($tag_names) {
             foreach($tag_names as $tag_name){
                 $portfolio = Portfolio::whereHas('tags', function($query) use ($tag_name) {
@@ -24,7 +24,13 @@ class PortfolioController extends Controller
                 });
             }
         }
+        
+        $draft = $draft->get()->isnotEmpty();
 
+        if(Auth::user()->role == 1 && $draft){
+            session()->flash('authenticationAlert');
+        }
+        
         $tags = $tag->get();
         $items = $portfolio->paginate(10);
         return view('index', compact('items', 'tags'));
