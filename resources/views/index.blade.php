@@ -26,30 +26,36 @@
         <div class="max-w-6xl sm:grid sm:grid-cols-3 sm:gap-6 sm:mx-auto sm:my-6 mx-3 my-3">
         @foreach($items as $item)
             <div class="border border-solid rounded border-gray-300 px-6 py-4 sm:mb-0 mb-6 bg-white div-index">
-                <h2 class="text-xl font-bold"><a href="/portfolio/{{ $item->id }}">
-                    {{ $item->title }}
-                </a></h2>
-                <a href="/portfolio/{{ $item->id }}" class="img-index">
-                <div class="flex items-center text-center" style="height: 300px">
-
-                @if(isset($item->image_path))
-                    <img class="" src="{{$item->image_path}}">
-                @else
-                    <div class="text-3xl m-auto">画像が存在しません</div>
-                @endif
-
-                </div>
+                <a href="/portfolio/{{ $item->id }}" class='title-index'>
+                    <div class="flex items-center text-center">
+                        <h2 class="text-xl font-bold">
+                            {{ $item->title }}
+                        </h2>
+                    </div>
                 </a>
-                <h2 class="text-gray-600 text-sm text-left mb-2"><a href="/portfolio/{{ $item->id }}">
-                    {{ $item->overview }}
-                </h2></a>
-                <h2>
-                    @foreach($item->tags as $tag)
-                        <a href="/portfolio?tags%5B%5D={{ $tag->name }}" class="text-blue-600 hover:text-blue-800">
+                <a href="/portfolio/{{ $item->id }}" class="img-index">
+                    <div class="flex items-center text-center" style="height: 300px">
+
+                    @if(isset($item->image_path))
+                        <img class="" src="{{$item->image_path}}">
+                    @else
+                        <div class="text-3xl m-auto">画像が存在しません</div>
+                    @endif
+
+                    </div>
+                </a>
+                <a href="/portfolio/{{ $item->id }}" class='overview-index'>
+                    <h2 class="text-gray-600 text-sm text-left mb-2">
+                        {{ $item->overview }}
+                    </h2>
+                </a>
+                @foreach($item->tags as $tag)
+                    <a href="/portfolio?tags%5B%5D={{ $tag->name }}" class="text-blue-600 hover:text-blue-800 tag-index">
+                        <h2>
                             #{{ $tag->name }}
-                        </a>
-                    @endforeach
-                </h2>
+                        </h2>
+                    </a>
+                @endforeach
             </div>
         @endforeach
         </div>
