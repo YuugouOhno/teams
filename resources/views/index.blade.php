@@ -11,7 +11,12 @@
             <p class="font-bold text-center absolute">{{ session('successMessage') }}</p>
             <p class="text-sm text-center">投稿までしばらくお待ちください！</p>
         </div>
+    @endif
 
+    @if (session('authenticationAlert'))
+    <div class="bg-red-100 border border-red-500 text-red-700 px-4 py-3 rounded relative" role="alert">
+            <p>認証待ちポートフォリオがあります。</p>
+        </div>
     @endif
     {{-- フラッシュメッセージ終わり --}}
     <input type="checkbox" class="check fade" id="checked-fade">
